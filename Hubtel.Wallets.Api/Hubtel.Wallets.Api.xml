@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hubtel.Wallets.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.AddWallet(Hubtel.Wallets.Api.Models.Data.WalletModel)">
+            <summary>
+            Add a new wallet 
+            </summary>
+            <param name="model"></param>
+            <remarks>
+            This api should be used to add new wallet to hubtel app.
+            
+            Sample data:
+            
+            { \
+                 "name": "Richard Opoku",\
+                 "type": "momo",\
+                 "accountNumber": "0244377253",\
+                 "accountScheme": "MTN",\
+                 "owner": "0244377253"\
+            }
+            
+            </remarks>
+            <returns></returns>
+            <response code="201">Wallet successfully created</response>
+            <response code="400">Cannot create wallet</response>
+        </member>
+        <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.GetWallet(System.Int32)">
+            <summary>
+            Get a single wallet information by wallet ID
+            </summary>
+            <param name="walletId"></param>
+            <remarks>This api should be used to get a single wallet information</remarks>
+            <returns></returns>
+            <response code="200">Wallet successfully found</response>
+            <response code="404">No wallet found</response>
+        </member>
+        <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.GetAllWallets">
+            <summary>
+            Get list of wallets stored
+            </summary>
+            <remarks>This api should be used to get a list of  wallets and their information</remarks>
+            <returns></returns>
+            <response code="200">Wallets successfully found</response>
+            <response code="404">No wallets found</response>
+        </member>
+        <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.RemoveWallet(System.String)">
+            <summary>
+            Remove wallet using account number.
+            </summary>
+            <param name="accountNumber"></param>
+            <remarks>This api should be used to remove wallet using account number</remarks>
+            <returns></returns>
+            <response code="200">Wallet successfully removed</response>
+            <response code="400">Cannot remove wallet</response>
+        </member>
+        <member name="P:Hubtel.Wallets.Api.Models.Data.WalletModel.Name">
+            <summary>
+            Enter the full name of the user
+            </summary>
+        </member>
+        <member name="P:Hubtel.Wallets.Api.Models.Data.WalletModel.Type">
+            <summary>
+            Enter [momo or card] as value for Type field.
+            </summary>
+        </member>
+        <member name="P:Hubtel.Wallets.Api.Models.Data.WalletModel.AccountNumber">
+            <summary>
+            Enter [momo number or card number] as value for AccountNumber field.
+            </summary>
+        </member>
+        <member name="P:Hubtel.Wallets.Api.Models.Data.WalletModel.AccountScheme">
+            <summary>
+            Enter [MTN or Vodafone or AirtelTigo or Visa or Mastercard] as value for AccountScheme field.
+            </summary>
+        </member>
+        <member name="P:Hubtel.Wallets.Api.Models.Data.WalletModel.Owner">
+            <summary>
+            Enter [user phone number] as value for Owner field.
+            </summary>
+        </member>
+    </members>
+</doc>
