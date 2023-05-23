@@ -1,6 +1,5 @@
 # Hubtel Wallets Api
 
+This is an API service to be used to manage a user's wallet on the Hubtel app. 
 
 
-![This is an image]
-(https://p.kindpng.com/picc/s/25-253110_tigo-logo-png-png-download-hubtel-ghana-logo.png)
