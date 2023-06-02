@@ -27,6 +27,16 @@
             <response code="201">Wallet successfully created</response>
             <response code="400">Cannot create wallet</response>
         </member>
+        <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.RemoveWallet(System.String)">
+            <summary>
+            Remove wallet using account number.
+            </summary>
+            <param name="accountNumber"></param>
+            <remarks>This api should be used to remove wallet using account number</remarks>
+            <returns></returns>
+            <response code="200">Wallet successfully removed</response>
+            <response code="400">Cannot remove wallet</response>
+        </member>
         <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.GetWallet(System.Int32)">
             <summary>
             Get a single wallet information by wallet ID
@@ -45,16 +55,6 @@
             <returns></returns>
             <response code="200">Wallets successfully found</response>
             <response code="404">No wallets found</response>
-        </member>
-        <member name="M:Hubtel.Wallets.Api.Controllers.WalletController.RemoveWallet(System.String)">
-            <summary>
-            Remove wallet using account number.
-            </summary>
-            <param name="accountNumber"></param>
-            <remarks>This api should be used to remove wallet using account number</remarks>
-            <returns></returns>
-            <response code="200">Wallet successfully removed</response>
-            <response code="400">Cannot remove wallet</response>
         </member>
         <member name="P:Hubtel.Wallets.Api.Models.Data.WalletModel.Name">
             <summary>

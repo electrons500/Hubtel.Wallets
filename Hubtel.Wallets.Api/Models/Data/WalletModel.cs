@@ -19,7 +19,7 @@ namespace Hubtel.Wallets.Api.Models.Data
         /// Enter [momo number or card number] as value for AccountNumber field.
         /// </summary>
         [Required]
-        [MaxLength(16)]
+        [MaxLength(17)] 
         public string AccountNumber { get; set; }
         /// <summary>
         /// Enter [MTN or Vodafone or AirtelTigo or Visa or Mastercard] as value for AccountScheme field.
@@ -34,5 +34,6 @@ namespace Hubtel.Wallets.Api.Models.Data
         [MaxLength(10)]
         [Phone]
         public string Owner { get; set; }
+
     }
 }

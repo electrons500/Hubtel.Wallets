@@ -77,6 +77,29 @@ namespace Hubtel.Wallets.Api.Controllers
         }
 
 
+
+        /// <summary>
+        /// Remove wallet using account number.
+        /// </summary>
+        /// <param name="accountNumber"></param>
+        /// <remarks>This api should be used to remove wallet using account number</remarks>
+        /// <returns></returns>
+        /// <response code="200">Wallet successfully removed</response>
+        /// <response code="400">Cannot remove wallet</response>
+        [HttpDelete("RemoveWallet/{accountNumber}")]
+        public ActionResult RemoveWallet(string accountNumber)
+        {
+            //Remove wallet using account number
+            bool IsWalletRemoved = _WalletService.RemoveWallet(accountNumber);
+            if (IsWalletRemoved)
+            {
+                return StatusCode(StatusCodes.Status200OK, new { message = "Wallet successfully removed", responseCode = "200" });
+            }
+            //if wallet was not successfully removed then throw a bad request.
+            return StatusCode(StatusCodes.Status400BadRequest, new { message = "Cannot remove wallet", responseCode = "400" });
+        }
+
+
         /// <summary>
         /// Get a single wallet information by wallet ID
         /// </summary>
@@ -120,26 +143,7 @@ namespace Hubtel.Wallets.Api.Controllers
         }
 
 
-        /// <summary>
-        /// Remove wallet using account number.
-        /// </summary>
-        /// <param name="accountNumber"></param>
-        /// <remarks>This api should be used to remove wallet using account number</remarks>
-        /// <returns></returns>
-        /// <response code="200">Wallet successfully removed</response>
-        /// <response code="400">Cannot remove wallet</response>
-        [HttpDelete("RemoveWallet/{accountNumber}")]
-        public ActionResult RemoveWallet(string accountNumber)
-        {
-            //Remove wallet using account number
-            bool IsWalletRemoved = _WalletService.RemoveWallet(accountNumber);
-            if (IsWalletRemoved)
-            {
-                return StatusCode(StatusCodes.Status200OK, new { message = "Wallet successfully removed", responseCode = "200" });
-            }
-            //if wallet was not successfully removed then throw a bad request.
-            return StatusCode(StatusCodes.Status400BadRequest, new { message = "Cannot remove wallet", responseCode = "400" });
-        }
+       
 
     }
 }
